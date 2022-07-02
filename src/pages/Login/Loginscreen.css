@@ -1,0 +1,28 @@
+.login-container{
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
+}
+img{
+    width: 50%;
+    height: 50%;
+}
+.img-flex{
+    width: 50%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+   
+}
+.form-flex{
+    
+    width: 50%;
+    width: 50%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+
+}

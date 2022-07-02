@@ -1,0 +1,42 @@
+.input-text{
+    
+    display: block;
+    margin: 15px;
+}
+.text-fieldcont{
+
+    width: 70%;
+    margin: auto;
+}
+.text-field{
+    background-color: rgb(241, 241, 241);
+    margin-bottom: 30px;
+    width: 100%;
+   display: block;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    
+}
+.form-container{
+    padding-left: 15px;
+    
+}
+.err-msg{
+    color: red;
+    margin-bottom: 15px;
+}
+.login-btn{
+    background-color:#1AB07A ;
+    border: none;
+    color: white;
+    padding: 15px 100px;
+    border-radius: 5px;
+    text-align: center;
+    width: 70%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
