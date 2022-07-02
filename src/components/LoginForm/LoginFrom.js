@@ -1,7 +1,11 @@
 import React from "react";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { LoginScreen } from "../../pages/Login/LoginScreen";
+import DashboardScreen from "../../pages/Dashboard/DashboardScreen";
+
 const validationSchema = Yup.object().shape({
   email: Yup.string("Enter your email")
     .email("Enter a valid email")
@@ -10,7 +14,8 @@ const validationSchema = Yup.object().shape({
     .min(8, "Password should be of minimum 8 characters length")
     .required("Password is required"),
 });
-const LoginFrom = () => {
+export default function LoginFrom() {
+  let navigate = useNavigate();
   return (
     <div>
       <Formik
@@ -18,6 +23,8 @@ const LoginFrom = () => {
         validationSchema={validationSchema}
         onSubmit={(values) => {
           console.log(values);
+          let path = `dashboard`;
+          navigate(path);
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors }) => {
@@ -62,6 +69,4 @@ const LoginFrom = () => {
       </Formik>
     </div>
   );
-};
-
-export default LoginFrom;
+}
