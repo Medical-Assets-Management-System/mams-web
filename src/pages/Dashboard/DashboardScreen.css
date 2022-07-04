@@ -18,6 +18,9 @@
     
     /* grid-column: span 1; */
   }
+  .head{
+    border: none;
+  }
   .detail{
       color: #1AB07A;
       font-weight: bolder;

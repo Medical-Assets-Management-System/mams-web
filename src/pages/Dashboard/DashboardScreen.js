@@ -2,25 +2,36 @@ import React from "react";
 import "./DashboardScreen.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSkating } from "@fortawesome/free-solid-svg-icons";
-
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 import BarChart from "../../components/BarChart";
 export default function DashboardScreen() {
   return (
     <div className="dashboard-cont">
       <div className="container">
-        <div className="box-1">
+        <div className="box-1 head">
           <div class="card">
             <div className="chart">
               <BarChart />
             </div>
           </div>
         </div>
-        <div className="box-9 tottal">
+        <div className="box-9 tottal head">
           <h4>Tottal Devices</h4>
 
           <p class="">11500</p>
         </div>
-        <div className="box-8"></div>
+        <div className="box-8 head">
+          <h1>MAMS</h1>
+          <TextField
+            id="search-bar"
+            className="text"
+            label="Search by Device ID"
+            variant="outlined"
+            placeholder="Search..."
+            size="small"
+          />
+        </div>
 
         <div className="box-2">
           <div class="card">
