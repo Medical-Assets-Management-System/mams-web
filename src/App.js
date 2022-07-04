@@ -6,7 +6,7 @@ import { LoginScreen } from "./pages/Login/LoginScreen";
 
 export default function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<LoginScreen />} />
         <Route path="dashboard" element={<DashboardScreen />} />
