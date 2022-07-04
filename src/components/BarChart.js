@@ -10,20 +10,12 @@ class App extends Component {
         chart: {
           height: 350,
           type: "bar",
+          width: 50,
         },
         colors: ["#1AB07A", "#E91E63", "#9C27B0"],
 
         xaxis: {
-          categories: [
-            ["John", "Doe"],
-            ["Joe", "Smith"],
-            ["Jake", "Williams"],
-            "Amber",
-            ["Peter", "Brown"],
-            ["Mary", "Evans"],
-            ["David", "Wilson"],
-            ["Lily", "Roberts"],
-          ],
+          categories: [["Z"], ["Y"], ["Z"], ["Y"], ["Z"], ["Y"], ["Z"], ["Y"]],
           labels: {
             style: {
               colors: ["#1AB07A", "#E91E63", "#9C27B0"],
@@ -34,7 +26,7 @@ class App extends Component {
       },
       series: [
         {
-          data: [21, 22, 10, 28, 16, 21, 13, 300],
+          data: [21, 22, 10, 28, 16, 21, 13, 30],
         },
       ],
     };

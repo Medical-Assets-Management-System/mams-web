@@ -10,11 +10,18 @@ export default function DashboardScreen() {
       <div className="container">
         <div className="box-1">
           <div class="card">
-            <BarChart />
+            <div className="chart">
+              <BarChart />
+            </div>
           </div>
         </div>
+        <div className="box-9 tottal">
+          <h4>Tottal Devices</h4>
+
+          <p class="">11500</p>
+        </div>
         <div className="box-8"></div>
-        <div className="box-9"></div>
+
         <div className="box-2">
           <div class="card">
             <h4>Function fvgjmf v</h4>
