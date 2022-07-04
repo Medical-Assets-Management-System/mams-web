@@ -5,6 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { LoginScreen } from "../../pages/Login/LoginScreen";
 import DashboardScreen from "../../pages/Dashboard/DashboardScreen";
+import AuthServices from "../../services/AuthService";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string("Enter your email")
@@ -21,10 +22,21 @@ export default function LoginFrom() {
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
+        onSubmit={async (values) => {
           console.log(values);
+          let Auth = await AuthServices.login(values);
+          localStorage.setItem("userToken", Auth);
+          const status = localStorage.getItem("isLoggedIn");
+          const role = localStorage.getItem("userRole");
+          const userID = localStorage.getItem("userID");
+          console.log("logged?", status);
+          console.log("Role", role);
+          console.log("userID", userID);
+          console.log("ana", Auth);
           let path = `dashboard`;
-          navigate(path);
+          if (Auth) {
+            navigate(path);
+          }
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors }) => {

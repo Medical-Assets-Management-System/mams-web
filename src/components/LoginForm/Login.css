@@ -26,6 +26,7 @@
 .err-msg{
     color: red;
     margin-bottom: 15px;
+    font-size: small;
 }
 .login-btn{
     background-color:#1AB07A ;
