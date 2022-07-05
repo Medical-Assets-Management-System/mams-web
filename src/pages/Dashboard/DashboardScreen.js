@@ -15,7 +15,7 @@ export default function DashboardScreen() {
   };
   const handleSubmit = () => {
     console.log(search);
-    let path = `viewDevice:1`;
+    let path = `viewDevice:${search}`;
     navigate(path);
   };
   return (
@@ -31,7 +31,7 @@ export default function DashboardScreen() {
         <div className="box-9 tottal head">
           <h4>Tottal Devices</h4>
 
-          <p class="">11500</p>
+          <p class="">750</p>
         </div>
         <div className="box-8 head">
           <h1>MAMS</h1>
@@ -53,38 +53,38 @@ export default function DashboardScreen() {
 
         <div className="box-2">
           <div class="card">
-            <h4>Function fvgjmf v</h4>
-            <p class="detail">11500</p>
+            <h4>Function Devices</h4>
+            <p class="detail">600</p>
           </div>
         </div>
         <div className="box-3">
           <div class="card">
-            <h4>Function</h4>
-            <p class="detail">500</p>
+            <h4>Partially Function</h4>
+            <p class="detail">100</p>
           </div>
         </div>
         <div className="box-4">
           <div class="card">
-            <h4>Function</h4>
-            <p class="detail">500</p>
+            <h4>Not Functioning</h4>
+            <p class="detail">10</p>
           </div>
         </div>
         <div className="box-5">
           <div class="card">
-            <h4>Function</h4>
-            <p class="detail">500</p>
+            <h4>Scrapped</h4>
+            <p class="detail">200</p>
           </div>
         </div>
         <div className="box-6">
           <div class="card">
-            <h4>Function</h4>
+            <h4>Waranty</h4>
             <p class="detail">500</p>
           </div>
         </div>
         <div className="box-7">
           <div class="card">
-            <h4>Function</h4>
-            <p class="detail">500</p>
+            <h4>No warranty</h4>
+            <p class="detail">250</p>
           </div>{" "}
         </div>
       </div>
