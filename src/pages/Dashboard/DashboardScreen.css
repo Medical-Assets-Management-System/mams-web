@@ -21,6 +21,20 @@
   .head{
     border: none;
   }
+  .search-cont{
+    width: 100%;
+  
+  }
+  .search-bar{
+    width: 90%;
+  }
+  .search-btn{
+    background-color: #1AB07A;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+  }
   .detail{
       color: #1AB07A;
       font-weight: bolder;

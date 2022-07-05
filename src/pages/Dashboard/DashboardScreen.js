@@ -5,7 +5,19 @@ import { faSkating } from "@fortawesome/free-solid-svg-icons";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import BarChart from "../../components/BarChart";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 export default function DashboardScreen() {
+  let navigate = useNavigate();
+  const [search, setsearch] = useState("");
+  const handleChange = (e) => {
+    setsearch(e.target.value);
+  };
+  const handleSubmit = () => {
+    console.log(search);
+    let path = `viewDevice:1`;
+    navigate(path);
+  };
   return (
     <div className="dashboard-cont">
       <div className="container">
@@ -23,14 +35,20 @@ export default function DashboardScreen() {
         </div>
         <div className="box-8 head">
           <h1>MAMS</h1>
-          <TextField
-            id="search-bar"
-            className="text"
-            label="Search by Device ID"
-            variant="outlined"
-            placeholder="Search..."
-            size="small"
-          />
+          <div className="search-cont">
+            <TextField
+              id="search-bar"
+              className="search-bar"
+              label="Search by Device ID"
+              variant="outlined"
+              placeholder="Search..."
+              size="small"
+              onChange={handleChange}
+            />
+            <button onClick={handleSubmit} className="search-btn">
+              Search
+            </button>
+          </div>
         </div>
 
         <div className="box-2">
