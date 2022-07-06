@@ -33,14 +33,22 @@ export default function ViewDevice() {
     let path = `/`;
     navigate(path);
   };
+  const signUpHandle = () => {
+    console.log("sign");
+  };
 
   return (
     <div>
       <div className="header">
         <h2>MAMS</h2>
-        <button className="log-btn" onClick={logOutHandle}>
-          Log Out
-        </button>
+        <div className="btn-cont">
+          <button className="btn" onClick={signUpHandle}>
+            New Member
+          </button>
+          <button className="btn" onClick={logOutHandle}>
+            Log Out
+          </button>
+        </div>
       </div>
       <div className="table-cont">
         <TableContainer component={Paper}>

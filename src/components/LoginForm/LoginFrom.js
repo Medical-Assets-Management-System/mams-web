@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -16,6 +17,7 @@ const validationSchema = Yup.object().shape({
     .required("Password is required"),
 });
 export default function LoginFrom() {
+  const [wrong, setwrong] = useState("");
   let navigate = useNavigate();
   return (
     <div>
@@ -36,6 +38,9 @@ export default function LoginFrom() {
           let path = `dashboard`;
           if (Auth) {
             navigate(path);
+          } else {
+            console.log("please enter");
+            setwrong("Incorrect Email or Password");
           }
         }}
       >
@@ -43,11 +48,13 @@ export default function LoginFrom() {
           return (
             <Form className="form-container">
               <h2>Login</h2>
-
+              <div className="unvalid-msg-cont">
+                <p className="unvalid-msg">{wrong}</p>
+              </div>
               <div className="text-fieldcont">
                 <Field
                   className="text-field"
-                  placeholder="Example@gmail.com"
+                  placeholder="   Example@gmail.com"
                   type="email"
                   name="email"
                 />
@@ -57,7 +64,7 @@ export default function LoginFrom() {
               <div className="text-fieldcont">
                 <Field
                   className="text-field"
-                  placeholder="Password"
+                  placeholder="   Password"
                   type="password"
                   name="password"
                 />

@@ -11,15 +11,14 @@ h2{
 .table-cont{
     margin: 25px;
 }
-.log-btn{
-    position: absolute;
-    display: inline-block;
-right: 55px;
+.btn{
+    
+
 border: none;
 color: white;
 border-radius: 9px;
 font-weight: bold;
-padding: 15px 32px;
+padding: 15px 0px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
@@ -27,4 +26,11 @@ font-size: 16px;
 margin: 4px 2px;
 cursor: pointer;
 background-color: #1AB07A;
+width: 150px;
+}
+.btn-cont{
+    position: absolute;
+    display: inline-block;
+right: 75px;
+
 }

@@ -16,11 +16,11 @@
     height: 40px;
     border: none;
     border-radius: 5px;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     
 }
 .form-container{
-    padding-left: 15px;
+    padding-left: 0px;
     
 }
 .err-msg{
@@ -28,11 +28,26 @@
     margin-bottom: 15px;
     font-size: small;
 }
+.unvalid-msg-cont{
+   
+    display: flex;
+    justify-content: center;
+}
+.unvalid-msg{
+    font-size: small;
+    width: 70%;
+    /* background-color: #e9153831; */
+    color: red;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    
+}
 .login-btn{
     background-color:#1AB07A ;
     border: none;
     color: white;
-    padding: 15px 100px;
+    padding: 15px 0px;
     border-radius: 5px;
     text-align: center;
     width: 70%;
