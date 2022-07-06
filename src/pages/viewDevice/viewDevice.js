@@ -10,6 +10,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import AuthServices from "../../services/AuthService";
 export default function ViewDevice() {
   let navigate = useNavigate();
   let deviceData = { id: 1 };
@@ -27,7 +28,8 @@ export default function ViewDevice() {
       })
       .catch((error) => console.log(error));
   }, []);
-  const logOutHandle = () => {
+  const logOutHandle = async () => {
+    await AuthServices.logOut();
     let path = `/`;
     navigate(path);
   };

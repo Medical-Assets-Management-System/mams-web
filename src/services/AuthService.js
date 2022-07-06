@@ -1,4 +1,5 @@
 import axios from "axios";
+import authHeader from "./authHeader";
 
 let jwt;
 
@@ -26,7 +27,23 @@ const login = (values) => {
     });
 };
 
+const logOut = async () => {
+  let token = await authHeader();
+  return axios
+    .delete("https://mams-api.herokuapp.com/logout", {
+      headers: { Authorization: token },
+    })
+    .then(async (res) => {
+      console.log(res.data);
+      localStorage.clear();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 const AuthServices = {
   login,
+  logOut,
 };
 export default AuthServices;
