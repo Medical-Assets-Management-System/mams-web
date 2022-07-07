@@ -1,12 +1,6 @@
 import React from "react";
-import { useState } from "react";
-import "./Login.css";
-import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { LoginScreen } from "../../pages/Login/LoginScreen";
-import DashboardScreen from "../../pages/Dashboard/DashboardScreen";
-import AuthServices from "../../services/AuthService";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string("Enter your email")
@@ -16,40 +10,23 @@ const validationSchema = Yup.object().shape({
     .min(8, "Password should be of minimum 8 characters length")
     .required("Password is required"),
 });
-export default function LoginFrom() {
-  const [wrong, setwrong] = useState("");
-  let navigate = useNavigate();
+
+export default function SignUpForm() {
   return (
     <div>
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: "", password: "", role: "" }}
         validationSchema={validationSchema}
         onSubmit={async (values) => {
           console.log(values);
-          let Auth = await AuthServices.login(values);
-          localStorage.setItem("userToken", Auth);
-          const status = localStorage.getItem("isLoggedIn");
-          const role = localStorage.getItem("userRole");
-          const userID = localStorage.getItem("userID");
-          console.log("logged?", status);
-          console.log("Role", role);
-          console.log("userID", userID);
-          console.log("ana", Auth);
-          let path = `dashboard`;
-          if (Auth && role == "admin") {
-            navigate(path);
-          } else {
-            console.log("please enter");
-            setwrong("Incorrect Email or Password");
-          }
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors }) => {
           return (
             <Form className="form-container">
-              <h2>Login</h2>
+              <h2>SignUP</h2>
               <div className="unvalid-msg-cont">
-                <p className="unvalid-msg">{wrong}</p>
+                {/* <p className="unvalid-msg">{wrong}</p> */}
               </div>
               <div className="text-fieldcont">
                 <Field
@@ -58,6 +35,32 @@ export default function LoginFrom() {
                   type="email"
                   name="email"
                 />
+              </div>
+              <ErrorMessage className="err-msg" name="email" component="div" />
+
+              <div className="text-fieldcont">
+                <select
+                  className="text-field"
+                  name="roles"
+                  value={values.color}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                >
+                  <option value="" label="Select a role">
+                    Select a color{" "}
+                  </option>
+                  <option value="admin" label="admin">
+                    {" "}
+                    admin
+                  </option>
+                  <option value="engineer" label="engineer">
+                    engineer
+                  </option>
+
+                  <option value="nurse" label="nurse">
+                    nurse
+                  </option>
+                </select>
               </div>
               <ErrorMessage className="err-msg" name="email" component="div" />
 
@@ -74,14 +77,6 @@ export default function LoginFrom() {
                 name="password"
                 component="div"
               />
-
-              <button
-                className="login-btn"
-                type="submit"
-                onClick={handleSubmit}
-              >
-                LOGIN
-              </button>
             </Form>
           );
         }}

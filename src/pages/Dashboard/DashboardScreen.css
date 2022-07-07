@@ -4,7 +4,7 @@
     font-family: Lato, sans-serif;
     font-size: 40px;
     /* width: 100%; */
-    margin:  50px 0px 0px 0px; 
+    margin:  10px 0px 0px 0px; 
     
   }
   
@@ -56,6 +56,19 @@
 	font-size: px;
 	font-weight: lighter;
 	margin: 10px 0;
+}
+.btn-nav{
+
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 60px;
+  
+}
+.flt-btn{
+  position: absolute;
+right: 10px;
+top: 5px;
+
 }
   .container {
     display: grid;

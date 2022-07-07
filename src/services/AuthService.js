@@ -27,6 +27,16 @@ const login = (values) => {
     });
 };
 
+const signUp = (values) => {
+  console.log(values);
+  // return axios
+  // .post("https://mams-api.herokuapp.com/signup",{
+  //   user:{
+  //     email: values.email
+  //   }
+  // })
+};
+
 const logOut = async () => {
   let token = await authHeader();
   return axios
@@ -45,5 +55,6 @@ const logOut = async () => {
 const AuthServices = {
   login,
   logOut,
+  signUp,
 };
 export default AuthServices;

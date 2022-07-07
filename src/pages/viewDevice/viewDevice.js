@@ -35,6 +35,8 @@ export default function ViewDevice() {
   };
   const signUpHandle = () => {
     console.log("sign");
+    let path = `/signup`;
+    navigate(path);
   };
 
   return (
@@ -86,7 +88,7 @@ export default function ViewDevice() {
                 <TableCell component="th" scope="row">
                   Maintenance Company
                 </TableCell>
-                <TableCell align="center">Life Care</TableCell>
+                <TableCell align="center"></TableCell>
               </TableRow>
               {/* ///// */}
               <TableRow
