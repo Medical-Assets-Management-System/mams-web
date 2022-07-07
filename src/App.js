@@ -3,7 +3,9 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import LoginFrom from "./components/LoginForm/LoginFrom";
 import SignUpForm from "./components/SignUpForm";
 import DashboardScreen from "./pages/Dashboard/DashboardScreen";
+
 import { LoginScreen } from "./pages/Login/LoginScreen";
+import SignUp from "./pages/Signup/SignUp";
 import ViewDevice from "./pages/viewDevice/viewDevice";
 
 export default function App() {
@@ -11,7 +13,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginScreen />} />
-        <Route path="/signup" element={<SignUpForm />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<DashboardScreen />} />
         <Route path="/viewDevice/:deviceID" element={<ViewDevice />} />
       </Routes>

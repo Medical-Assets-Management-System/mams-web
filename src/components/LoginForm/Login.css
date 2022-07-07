@@ -8,6 +8,13 @@
     width: 70%;
     margin: auto;
 }
+.form-cont{
+    margin-top: 15px;
+    text-align: center;
+}
+h2{
+    background-color:white;
+}
 .text-field{
     background-color: rgb(241, 241, 241);
     margin-bottom: 30px;
@@ -16,11 +23,13 @@
     height: 40px;
     border: none;
     border-radius: 5px;
+    margin-top: 15px;
     /* padding-left: 10px; */
     
 }
 .form-container{
     padding-left: 0px;
+    background-color: white;
     
 }
 .err-msg{

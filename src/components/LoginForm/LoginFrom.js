@@ -18,6 +18,8 @@ const validationSchema = Yup.object().shape({
 });
 export default function LoginFrom() {
   const [wrong, setwrong] = useState("");
+  let [count, setcount] = useState(0);
+  let [disabled, setdisable] = useState(false);
   let navigate = useNavigate();
   return (
     <div>
@@ -40,7 +42,18 @@ export default function LoginFrom() {
             navigate(path);
           } else {
             console.log("please enter");
-            setwrong("Incorrect Email or Password");
+            setcount(count + 1);
+            console.log(count);
+            if (count < 2) {
+              setwrong("Incorrect Email or Password");
+            } else {
+              setwrong("3 Wrong Trials try after 2 min");
+              setdisable(true);
+              setTimeout(() => {
+                setdisable(false);
+              }, 6000);
+              setcount(0);
+            }
           }
         }}
       >
@@ -57,6 +70,7 @@ export default function LoginFrom() {
                   placeholder="   Example@gmail.com"
                   type="email"
                   name="email"
+                  disabled={disabled}
                 />
               </div>
               <ErrorMessage className="err-msg" name="email" component="div" />
@@ -67,6 +81,7 @@ export default function LoginFrom() {
                   placeholder="   Password"
                   type="password"
                   name="password"
+                  disabled={disabled}
                 />
               </div>
               <ErrorMessage

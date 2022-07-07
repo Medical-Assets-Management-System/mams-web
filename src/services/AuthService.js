@@ -29,12 +29,20 @@ const login = (values) => {
 
 const signUp = (values) => {
   console.log(values);
-  // return axios
-  // .post("https://mams-api.herokuapp.com/signup",{
-  //   user:{
-  //     email: values.email
-  //   }
-  // })
+  return axios
+    .post("https://mams-api.herokuapp.com/signup", {
+      user: {
+        email: values.email,
+        password: values.password,
+        role: values.role,
+      },
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 const logOut = async () => {

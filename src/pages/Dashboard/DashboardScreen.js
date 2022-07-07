@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import BarChart from "../../components/BarChart";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+import AuthServices from "../../services/AuthService";
 export default function DashboardScreen() {
   let { deviceID } = useParams();
   let navigate = useNavigate();
@@ -19,11 +20,25 @@ export default function DashboardScreen() {
     let path = `/viewDevice/:${search}`;
     navigate(path);
   };
+  const logOutHandle = async () => {
+    await AuthServices.logOut();
+    let path = `/`;
+    navigate(path);
+  };
+  const signUpHandle = () => {
+    console.log("sign");
+    let path = `/signup`;
+    navigate(path);
+  };
   return (
     <div className="dashboard-cont">
       <div className="btn-nav">
-        <button className="btn">New Member</button>
-        <button className="btn">Logout</button>
+        <button className="btn" onClick={signUpHandle}>
+          New Member
+        </button>
+        <button className="btn" onClick={logOutHandle}>
+          Logout
+        </button>
       </div>
       <div className="container">
         <div className="box-1 head">

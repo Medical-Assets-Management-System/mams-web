@@ -1,14 +1,12 @@
-.login-container{
-    display: flex;
 
+
+/* .container{
+    display: flex;
     align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  align-content: center;
-}
-img{
-    width: 100%;
-    height: 100%;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
+  
 }
 .img-flex{
     width: 50%;
@@ -18,6 +16,7 @@ img{
 
    
 }
+
 .form-flex{
 
     height: 100%;
@@ -26,4 +25,4 @@ img{
     align-items: center;
     justify-content: center;
 
-}
+} */

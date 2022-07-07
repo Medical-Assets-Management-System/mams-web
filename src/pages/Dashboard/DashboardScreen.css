@@ -64,12 +64,7 @@
   margin-right: 60px;
   
 }
-.flt-btn{
-  position: absolute;
-right: 10px;
-top: 5px;
 
-}
   .container {
     display: grid;
     gap: 50px  ;

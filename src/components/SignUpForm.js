@@ -1,6 +1,8 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import "./LoginForm/Login.css";
 import * as Yup from "yup";
+import AuthServices from "../services/AuthService";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string("Enter your email")
@@ -13,21 +15,19 @@ const validationSchema = Yup.object().shape({
 
 export default function SignUpForm() {
   return (
-    <div>
+    <div className="form-cont">
       <Formik
         initialValues={{ email: "", password: "", role: "" }}
         validationSchema={validationSchema}
         onSubmit={async (values) => {
-          console.log(values);
+          AuthServices.signUp(values);
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values, errors }) => {
           return (
             <Form className="form-container">
-              <h2>SignUP</h2>
-              <div className="unvalid-msg-cont">
-                {/* <p className="unvalid-msg">{wrong}</p> */}
-              </div>
+              <h2>Create an Account</h2>
+
               <div className="text-fieldcont">
                 <Field
                   className="text-field"
@@ -41,13 +41,13 @@ export default function SignUpForm() {
               <div className="text-fieldcont">
                 <select
                   className="text-field"
-                  name="roles"
+                  name="role"
                   value={values.color}
                   onChange={handleChange}
                   onBlur={handleBlur}
                 >
                   <option value="" label="Select a role">
-                    Select a color{" "}
+                    Select a Role{" "}
                   </option>
                   <option value="admin" label="admin">
                     {" "}
@@ -77,6 +77,14 @@ export default function SignUpForm() {
                 name="password"
                 component="div"
               />
+
+              <button
+                className="login-btn"
+                type="submit"
+                onClick={handleSubmit}
+              >
+                SIGNUP
+              </button>
             </Form>
           );
         }}
