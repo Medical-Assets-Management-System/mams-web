@@ -1,11 +1,14 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
+import { useNavigate } from "react-router-dom";
 import "./DeviceEdit.css";
 import { useLocation } from "react-router-dom";
+import apiServices from "../../services/apiServices";
 export default function DeviceEdit() {
   const location = useLocation();
-  console.log(location.state.state.data);
+  console.log(location.state.state.data.id);
   let deviceData = location.state.state.data;
+  let navigate = useNavigate();
   return (
     <div className="edit-container">
       <div className="tittle">Edit Device Data</div>
@@ -29,37 +32,38 @@ export default function DeviceEdit() {
         }}
         onSubmit={async (values) => {
           console.log(values);
+          apiServices.updateMedicalDevice(location.state.state.data.id, values);
+          let path = `/viewDevice/:${location.state.state.data.id}`;
+          navigate(path);
         }}
       >
         <Form className="flex-form">
           <div className="col">
-            <div>
-              <label htmlFor="equipment_num">Equipment Number</label>
-              <Field
-                className="field"
-                id="equipment_num"
-                label="equipment_num"
-                name="equipment_num"
-              />
-              <label htmlFor="equipment_name">Equipment Name</label>
-              <Field
-                className="field"
-                id="equipment_name"
-                label="equipment_name"
-                name="equipment_name"
-              />
-            </div>
-            <div>
-              <label htmlFor="model">Model</label>
-              <Field className="field" id="model" label="model" name="model" />
-              <label htmlFor="firstName">Responsibe Person</label>
-              <Field
-                className="field"
-                id="responsible_personnel"
-                label="responsible_personnel"
-                name="responsible_personnel"
-              />
-            </div>
+            <label htmlFor="equipment_num">Equipment Number</label>
+            <Field
+              className="field"
+              id="equipment_num"
+              label="equipment_num"
+              name="equipment_num"
+            />
+            <label htmlFor="equipment_name">Equipment Name</label>
+            <Field
+              className="field"
+              id="equipment_name"
+              label="equipment_name"
+              name="equipment_name"
+            />
+
+            <label htmlFor="model">Model</label>
+            <Field className="field" id="model" label="model" name="model" />
+            <label htmlFor="firstName">Responsibe Person</label>
+            <Field
+              className="field"
+              id="responsible_personnel"
+              label="responsible_personnel"
+              name="responsible_personnel"
+            />
+
             <div>
               <label htmlFor="equipment_num">Hospital ID</label>
               <Field

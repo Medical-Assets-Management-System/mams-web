@@ -9,8 +9,20 @@ const getMedicalDevice = async (id) => {
   });
 };
 
+const updateMedicalDevice = async (id, data) => {
+  let token = await authHeader();
+  console.log(token);
+  console.log(id, data);
+  return axios.patch(
+    "https://mams-api.herokuapp.com/medical_devices/" + id,
+    data,
+    { headers: { Authorization: token } }
+  );
+};
+
 const apiServices = {
   getMedicalDevice,
+  updateMedicalDevice,
 };
 
 export default apiServices;

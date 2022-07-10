@@ -1,15 +1,16 @@
 .flex-form{
     display: flex;
-    
-   
+
 }
 
 .col{
-    flex: 50%;
-    padding: 10px;
+    width: 50%;
+    margin: auto;
     height: 300px; 
+    justify-content: center;
 }
 label{
+    width: 50%;
     font-size: small;
     display: block;
 }
@@ -17,7 +18,7 @@ label{
     padding-left: 14px;
     background-color: rgb(241, 241, 241);
     margin-bottom: 15px;
-    width: 50%;
+    width: 90%;
    display: block;
     height: 40px;
     border: solid rgb(177, 176, 176) 1px;
