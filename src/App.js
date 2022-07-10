@@ -7,6 +7,7 @@ import DashboardScreen from "./pages/Dashboard/DashboardScreen";
 import { LoginScreen } from "./pages/Login/LoginScreen";
 import SignUp from "./pages/Signup/SignUp";
 import ViewDevice from "./pages/viewDevice/viewDevice";
+import DeviceEdit from "./pages/DeviceEdit/DeviceEdit";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LoginScreen />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/edit" element={<DeviceEdit />} />
         <Route path="/dashboard" element={<DashboardScreen />} />
         <Route path="/viewDevice/:deviceID" element={<ViewDevice />} />
       </Routes>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route, useParams, Link } from "react-router-dom";
 import "./viewDevice.css";
 import apiServices from "../../services/apiServices";
 import { useNavigate } from "react-router-dom";
@@ -38,6 +38,12 @@ export default function ViewDevice() {
     let path = `/signup`;
     navigate(path);
   };
+  const editHandle = () => {
+    console.log("edit");
+    console.log(data);
+    let path = `/edit`;
+    navigate(path, { state: { id: 1, name: "sabaoon" } });
+  };
 
   return (
     <div>
@@ -74,7 +80,7 @@ export default function ViewDevice() {
                 </TableCell>
                 <TableCell align="center">{data.equipment_num}</TableCell>
                 <TableCell component="th" scope="row">
-                  manufacturer Company
+                  Manufacturer Company
                 </TableCell>
                 <TableCell align="center">{data.manufacturer}</TableCell>
               </TableRow>
@@ -181,6 +187,11 @@ export default function ViewDevice() {
             </TableBody>
           </Table>
         </TableContainer>
+      </div>
+      <div className="btn-cont">
+        <Link to={"/edit"} state={{ state: { data } }}>
+          <button className="btn">EDIT</button>
+        </Link>
       </div>
     </div>
   );
