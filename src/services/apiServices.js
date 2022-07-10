@@ -20,9 +20,23 @@ const updateMedicalDevice = async (id, data) => {
   );
 };
 
+const getAllDevices = async () => {
+  let token = await authHeader();
+  return axios.get("https://mams-api.herokuapp.com/stat", {
+    headers: { Authorization: token },
+  });
+};
+const getDepartmentDevices = async () => {
+  let token = await authHeader();
+  return axios.get("https://mams-api.herokuapp.com/stat/department", {
+    headers: { Authorization: token },
+  });
+};
 const apiServices = {
   getMedicalDevice,
   updateMedicalDevice,
+  getAllDevices,
+  getDepartmentDevices,
 };
 
 export default apiServices;

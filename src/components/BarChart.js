@@ -1,53 +1,70 @@
 import React, { Component } from "react";
+import { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
+import apiServices from "../services/apiServices";
+let chartData = [];
+const BarChart = () => {
+  useEffect(() => {
+    let departments = [];
+    let counts = [];
+    apiServices
+      .getDepartmentDevices()
+      .then(async (response) => {
+        console.log(response.data);
+        response.data.map((item) => {
+          console.log(item);
+          departments.push(item.name);
+          counts.push(item.count);
+        });
+        console.log(departments);
+        setObject({
+          chart: {
+            height: 450,
+            width: 300,
+            type: "bar",
+          },
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      options: {
-        chart: {
-          height: 450,
-          width: 300,
-          type: "bar",
-        },
-        colors: ["#1AB07A", "#E91E63", "#9C27B0"],
-
-        xaxis: {
-          categories: [["Z"], ["Y"], ["Z"], ["Y"], ["Z"], ["Y"], ["Z"], ["Y"]],
-          labels: {
-            style: {
-              colors: ["#1AB07A", "#E91E63", "#9C27B0"],
-              fontSize: "12px",
+          xaxis: {
+            categories: departments,
+            labels: {
+              style: {
+                fontSize: "12px",
+              },
             },
           },
+        });
+        setSeries([
+          {
+            data: counts,
+          },
+        ]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  const [options, setObject] = useState({
+    chart: {
+      height: 450,
+      width: 300,
+      type: "bar",
+    },
+    colors: ["#1AB07A"],
+
+    xaxis: {
+      categories: [["Z"], ["Y"], ["Z"]],
+      labels: {
+        style: {
+          fontSize: "12px",
         },
       },
-      series: [
-        {
-          data: [21, 22, 10, 28, 16, 21, 13, 30],
-        },
-      ],
-    };
-  }
-
-  render() {
-    return (
-      <div className="app">
-        <div className="row">
-          <div className="mixed-chart">
-            <Chart
-              options={this.state.options}
-              series={this.state.series}
-              type="bar"
-              width="500"
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default App;
+    },
+  });
+  const [series, setSeries] = useState([
+    {
+      data: [21, 22, 10],
+    },
+  ]);
+  return <Chart options={options} series={series} type="bar" width="500" />;
+};
+export default BarChart;
