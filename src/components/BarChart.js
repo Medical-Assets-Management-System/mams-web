@@ -8,9 +8,9 @@ class App extends Component {
     this.state = {
       options: {
         chart: {
-          height: 350,
+          height: 450,
+          width: 300,
           type: "bar",
-          width: 50,
         },
         colors: ["#1AB07A", "#E91E63", "#9C27B0"],
 
