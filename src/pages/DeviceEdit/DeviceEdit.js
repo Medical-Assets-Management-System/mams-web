@@ -10,7 +10,7 @@ export default function DeviceEdit() {
   let deviceData = location.state.state.data;
   let navigate = useNavigate();
   return (
-    <div className="edit-container">
+    <div className="edit-container" style={{ height: "100vh" }}>
       <div className="tittle">Edit Device Data</div>
       <Formik
         initialValues={{
@@ -39,32 +39,32 @@ export default function DeviceEdit() {
       >
         <Form className="flex-form">
           <div className="col">
-            <label htmlFor="equipment_num">Equipment Number</label>
-            <Field
-              className="field"
-              id="equipment_num"
-              label="equipment_num"
-              name="equipment_num"
-            />
-            <label htmlFor="equipment_name">Equipment Name</label>
-            <Field
-              className="field"
-              id="equipment_name"
-              label="equipment_name"
-              name="equipment_name"
-            />
+            <div className="center">
+              <label htmlFor="equipment_num">Equipment Number</label>
+              <Field
+                className="field"
+                id="equipment_num"
+                label="equipment_num"
+                name="equipment_num"
+              />
+              <label htmlFor="equipment_name">Equipment Name</label>
+              <Field
+                className="field"
+                id="equipment_name"
+                label="equipment_name"
+                name="equipment_name"
+              />
 
-            <label htmlFor="model">Model</label>
-            <Field className="field" id="model" label="model" name="model" />
-            <label htmlFor="firstName">Responsibe Person</label>
-            <Field
-              className="field"
-              id="responsible_personnel"
-              label="responsible_personnel"
-              name="responsible_personnel"
-            />
+              <label htmlFor="model">Model</label>
+              <Field className="field" id="model" label="model" name="model" />
+              <label htmlFor="firstName">Responsibe Person</label>
+              <Field
+                className="field"
+                id="responsible_personnel"
+                label="responsible_personnel"
+                name="responsible_personnel"
+              />
 
-            <div>
               <label htmlFor="equipment_num">Hospital ID</label>
               <Field
                 className="field"
@@ -79,8 +79,7 @@ export default function DeviceEdit() {
                 label="department"
                 name="department"
               />
-            </div>
-            <div>
+
               <label htmlFor="floor">Floor</label>
               <Field className="field" id="floor" label="floor" name="floor" />
               <label htmlFor="room">Room Number</label>
@@ -88,7 +87,7 @@ export default function DeviceEdit() {
             </div>
           </div>
           <div className="col">
-            <div>
+            <div className="center">
               <label htmlFor="installation_date">Installation Date</label>
               <Field
                 className="field"
@@ -103,8 +102,7 @@ export default function DeviceEdit() {
                 label="manufacturer"
                 name="manufacturer"
               />
-            </div>
-            <div>
+
               <label htmlFor="firstName">Maintenance Company</label>
               <Field
                 className="field"
@@ -120,8 +118,7 @@ export default function DeviceEdit() {
                 label="warranty"
                 name="warranty"
               />
-            </div>
-            <div>
+
               <label htmlFor="warranty_period">Warranty Period</label>
               <Field
                 className="field"
@@ -136,8 +133,7 @@ export default function DeviceEdit() {
                 label="contract"
                 name="contract"
               />
-            </div>
-            <div>
+
               <label htmlFor="ppm_frequency"> PPM Frequency</label>
               <Field
                 className="field"
