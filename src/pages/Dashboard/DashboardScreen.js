@@ -95,7 +95,10 @@ export default function DashboardScreen() {
           </div>
         </div>
 
-        <div className="box-2">
+        <div
+          className="box-2"
+          onClick={() => navigate(`/viewDevices/:${devicesdata[0].keyword}`)}
+        >
           <div class="card">
             <h4>Function Devices</h4>
             <p class="detail" style={{ color: "#18b65f" }}>
@@ -103,7 +106,10 @@ export default function DashboardScreen() {
             </p>
           </div>
         </div>
-        <div className="box-3">
+        <div
+          className="box-3"
+          onClick={() => navigate(`/viewDevices/:${devicesdata[4].keyword}`)}
+        >
           <div class="card">
             <h4>Contract</h4>
             <p class="detail" style={{ color: "#18b65f" }}>
@@ -111,7 +117,10 @@ export default function DashboardScreen() {
             </p>
           </div>
         </div>
-        <div className="box-4">
+        <div
+          className="box-4"
+          onClick={() => navigate(`/viewDevices/:${devicesdata[1].keyword}`)}
+        >
           <div class="card">
             <h4>Not Functioning</h4>
             <p class="detail" style={{ color: "red" }}>
@@ -119,7 +128,10 @@ export default function DashboardScreen() {
             </p>
           </div>
         </div>
-        <div className="box-5">
+        <div
+          className="box-5"
+          onClick={() => navigate(`/viewDevices/:${devicesdata[2].keyword}`)}
+        >
           <div class="card">
             <h4>Scrapped</h4>
             <p class="detail" style={{ color: "red" }}>
@@ -127,7 +139,10 @@ export default function DashboardScreen() {
             </p>
           </div>
         </div>
-        <div className="box-6">
+        <div
+          className="box-6"
+          onClick={() => navigate(`/viewDevices/:${devicesdata[3].keyword}`)}
+        >
           <div class="card">
             <h4>Waranty</h4>
             <p class="detail" style={{ color: "blue" }}>
@@ -135,7 +150,10 @@ export default function DashboardScreen() {
             </p>
           </div>
         </div>
-        <div className="box-7">
+        <div
+          className="box-7"
+          onClick={() => navigate(`/viewDevices/:${devicesdata[5].keyword}`)}
+        >
           <div class="card">
             <h4>No warranty Nor Contract</h4>
             <p class="detail" style={{ color: "rgb(241, 228, 44)" }}>

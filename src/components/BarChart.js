@@ -62,7 +62,7 @@ const BarChart = () => {
   });
   const [series, setSeries] = useState([
     {
-      data: [21, 22, 10],
+      data: [0, 0, 0],
     },
   ]);
   return <Chart options={options} series={series} type="bar" width="500" />;

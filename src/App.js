@@ -8,6 +8,7 @@ import { LoginScreen } from "./pages/Login/LoginScreen";
 import SignUp from "./pages/Signup/SignUp";
 import ViewDevice from "./pages/viewDevice/viewDevice";
 import DeviceEdit from "./pages/DeviceEdit/DeviceEdit";
+import ViewDevicesList from "./pages/ViewDevicesList/ViewDevicesList";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/edit" element={<DeviceEdit />} />
         <Route path="/dashboard" element={<DashboardScreen />} />
         <Route path="/viewDevice/:deviceID" element={<ViewDevice />} />
+        <Route path="/viewDevices/:keyWord" element={<ViewDevicesList />} />
       </Routes>
     </BrowserRouter>
   );
