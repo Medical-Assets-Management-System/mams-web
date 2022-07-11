@@ -1,5 +1,7 @@
 .header{
-  
+    display: flex;
+    align-content: space-around;
+    flex-direction: column-reverse;
     position: relative;
     margin-left: 25px;
     margin-right: 25px;

@@ -22,7 +22,7 @@ export default function LoginFrom() {
   let [disabled, setdisable] = useState(false);
   let navigate = useNavigate();
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={validationSchema}
