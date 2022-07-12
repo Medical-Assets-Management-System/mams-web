@@ -92,9 +92,11 @@ export default function ViewDevice() {
                 </TableCell>
                 <TableCell align="center">{data.equipment_name}</TableCell>
                 <TableCell component="th" scope="row">
-                  Maintenance Company
+                  Callibration Frequency
                 </TableCell>
-                <TableCell align="center"></TableCell>
+                <TableCell align="center">
+                  {data.callibration_frequency}
+                </TableCell>
               </TableRow>
               {/* ///// */}
               <TableRow
@@ -117,7 +119,7 @@ export default function ViewDevice() {
                 <TableCell align="center" component="th" scope="row">
                   Hospital ID
                 </TableCell>
-                <TableCell align="center">{data.hospital_id}</TableCell>
+                <TableCell align="center">Cleopatra</TableCell>
                 <TableCell component="th" scope="row">
                   Warranty Period
                 </TableCell>
