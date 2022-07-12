@@ -17,6 +17,7 @@
     border-radius: 15px;
     height: 100%;
     padding: 15px 15px ;
+    border: 1px solid grey;
     
     /* grid-column: span 1; */
   }
@@ -28,12 +29,17 @@
   
   }
   .search-bar{
-    width: 90%;
+    width: 75%;
+    margin-left: 35px;
+   
+  
   }
   .search-btn{
     background-color: #1AB07A;
     border: none;
     padding: 15px;
+    width: 20%;
+    margin: auto;
     border-radius: 5px;
     color: white;
   }
@@ -146,31 +152,31 @@
   }
   .box-2 {
     grid-area: B;
-    border: solid 3px #18b65f;
+  
 
   }
   .box-3 {
     grid-area: C;
  
-    border: solid 3px #18b65f;
+    
   }
   .box-4 {
     grid-area: D;
-    border: solid 3px red;
+    
 
     
   }
   .box-5 {
     grid-area: E;
-    border: solid 3px red;
+  
   }
   .box-6 {
     grid-area: F;
-    border: solid 3px blue;
+   
   }
   .box-7 {
     grid-area: G;
-    border: solid 3px rgb(241, 228, 44);
+ 
   }
   .box-8 {
     grid-area: H;

@@ -85,14 +85,14 @@ export default function DashboardScreen() {
               className="search-bar"
               label="Search by Device ID"
               variant="outlined"
-              placeholder="Search..."
+              placeholder="Search "
               size="small"
               onChange={handleChange}
             />
-            <button onClick={handleSubmit} className="search-btn">
-              Search
-            </button>
           </div>
+          <button onClick={handleSubmit} className="search-btn">
+            Search
+          </button>
         </div>
 
         <div
@@ -100,7 +100,7 @@ export default function DashboardScreen() {
           onClick={() => navigate(`/viewDevices/:${devicesdata[0].keyword}`)}
         >
           <div class="card">
-            <h4>Function Devices</h4>
+            <h4>Functioning Devices</h4>
             <p class="detail" style={{ color: "#18b65f" }}>
               {devicesdata[0].count}
             </p>
@@ -111,7 +111,7 @@ export default function DashboardScreen() {
           onClick={() => navigate(`/viewDevices/:${devicesdata[4].keyword}`)}
         >
           <div class="card">
-            <h4>Contract</h4>
+            <h4>In Contract</h4>
             <p class="detail" style={{ color: "#18b65f" }}>
               {devicesdata[4].count}
             </p>
@@ -144,7 +144,7 @@ export default function DashboardScreen() {
           onClick={() => navigate(`/viewDevices/:${devicesdata[3].keyword}`)}
         >
           <div class="card">
-            <h4>Waranty</h4>
+            <h4>In Waranty</h4>
             <p class="detail" style={{ color: "blue" }}>
               {devicesdata[3].count}
             </p>
